@@ -1,0 +1,7 @@
+<h1>This is the New page of Doses</h1>
+
+<%= simple_form_for [ @cocktail, @dose ] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
