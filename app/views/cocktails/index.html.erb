@@ -1,15 +1,25 @@
 <h1>This is the Index page</h1>
+<!-- Banner of the website -->
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?cs=srgb&dl=pexels-chris-f-1283219.jpg&fm=jpg);">
+  <div class="container">
+    <h1>Create your <strong>magic potion</strong> be <strong>creative people</strong>!</h1>
+    <p>This website is made to change your friday night.</p>
+    <a class="btn btn-flat" href="">Drink with us</a>
+  </div>
+</div>
 
-<!-- app/views/restaurants/index.html.erb -->
-<div class="container">
+
+<!--Creation of cards -->
+<div class="container mt-5">
   <div class="row">
   <% @cocktails.each do |cocktail| %>
-      <div class="col-3">
-        <div class="cocktail-card" style="background-image: url('https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1886&q=80');">
-        <%= cocktail.name %>
+      <div class="col-4">
+        <div class="cocktail-card mt-5 mr-3" style="background-image: url('https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1886&q=80');">
+          <div class="link">
+           <%= link_to cocktail.name, cocktail_path(cocktail) %>
+          </div>
         </div>
       </div>
-
   <% end %>
  </div>
 </div>
@@ -17,3 +27,17 @@
 
 <%= link_to("Create", new_cocktail_path) %>
 
+
+<!-- Footer -->
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>
