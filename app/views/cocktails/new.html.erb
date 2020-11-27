@@ -3,6 +3,6 @@
 <%= simple_form_for [ @cocktail ] do |f| %>
   <%= f.input :name %>
   <%= f.submit "Let's Drink it", class: "btn btn-primary" %>
-  
+  <%= f.input :photo, as: :file %>
 
 <% end %>

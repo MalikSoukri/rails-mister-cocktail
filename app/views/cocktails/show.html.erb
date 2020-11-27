@@ -1,14 +1,22 @@
-<h1>This is the Cocktail Show Page</h1>
 
-<h5>You are showing this <strong><%= @cocktail.name %></strong> </h5>
-<br>
-<br>
-<h5>You are showing doses for <strong><%= @cocktail.name %></strong> </h5>
-<% @cocktail.doses.each do |dose| %>
-  <p><%= dose.description %> <%= dose.ingredient.name %> </p>
-<% end %>
-<br>
-<%= link_to "Add Ingredients to you cocktail", new_cocktail_dose_path(@cocktail)  %>
-<br>
-<%= link_to "Back to all cocktails", cocktails_path  %>
-<br>
+<div class="container">
+  <h1>This is the Cocktail Show Page</h1>
+  <br>
+  <br>
+  <h2>You are showing  <strong><%= @cocktail.name %></strong> cocktail </h2>
+  <br>
+  <br>
+  <h5><strong><%= @cocktail.name %></strong> is made of </h5>
+  <% @cocktail.doses.each do |dose| %>
+    <p><%= dose.description %> <%= dose.ingredient.name %> </p>
+  <% end %>
+  <br>
+  <% if @cocktail.photo.attached? %>
+    <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill  %>
+  <% end %>
+  <br>
+  <%= link_to "Add Ingredients to you cocktail", new_cocktail_dose_path(@cocktail)  %>
+  <br>
+  <%= link_to "Back to all cocktails", cocktails_path  %>
+  <br>
+</div>

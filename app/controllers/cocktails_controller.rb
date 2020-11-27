@@ -1,6 +1,7 @@
 class CocktailsController < ApplicationController
 
   def index
+    
     @cocktails = Cocktail.all
   end
 
@@ -20,12 +21,14 @@ class CocktailsController < ApplicationController
     else
       render :new
     end
+    
+    
   end
 
   private
 
   def review_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 
 end
